@@ -1,0 +1,58 @@
+# 依赖目录
+node_modules/
+
+# 构建输出
+dist/
+build/
+out/
+
+# 日志文件
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 编辑器目录和文件
+.idea/
+.vscode/
+*.swp
+*.swo
+.vs/
+*.sublime-workspace
+
+# 环境变量
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 打包文件
+*.tgz
+*.zip
+*.tar.gz
+*.dmg
+*.exe
+*.AppImage
+*.deb
+*.rpm
+
+# Electron 特定
+.electron-builder.env
+electron-builder.env
+
+# Electron 缓存和二进制文件
+.electron/
+electron/dist/
+**/node_modules/electron/dist/
+**/node_modules/electron/path.txt
+**/node_modules/.cache/electron/
+**/node_modules/.cache/electron-builder/

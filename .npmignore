@@ -1,0 +1,52 @@
+# 源代码控制
+.git/
+.gitignore
+
+# 构建输出
+dist/
+build/
+out/
+
+# 开发和测试文件
+test/
+tests/
+__tests__/
+coverage/
+.nyc_output/
+
+# 配置文件
+.travis.yml
+.gitlab-ci.yml
+.github/
+appveyor.yml
+.eslintrc*
+.prettierrc*
+.editorconfig
+tsconfig.json
+webpack.config.js
+rollup.config.js
+
+# 文档和示例
+docs/
+examples/
+demo/
+
+# 日志文件
+logs/
+*.log
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器目录和文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 其他不需要发布的文件
+screenshots/
+assets/source/
+*.tgz
+*.zip
