@@ -4,11 +4,12 @@
 )]
 
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use tauri::State;
+
 use std::process::Command;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
-use tauri::{Manager, State};
+
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct SleepPreventionMethods {
@@ -208,7 +209,7 @@ async fn start_sleep_prevention(
     // 如果需要模拟用户活动，启动定时器
     if methods.activity {
         let activity_timer = state.activity_timer.clone();
-        let prevention_methods = methods.clone();
+        let _prevention_methods = methods.clone();
         
         tokio::spawn(async move {
             let mut interval = tokio::time::interval(Duration::from_secs(60));
@@ -311,7 +312,7 @@ async fn stop_sleep_prevention(state: State<'_, AppState>) -> Result<CommandResp
 #[tauri::command]
 async fn get_prevention_state(state: State<'_, AppState>) -> Result<SleepPreventionState, String> {
     let prevention_state = state.prevention_state.lock().unwrap();
-    Ok(prevention_state.clone())
+    Ok(SleepPreventionState { is_active: prevention_state.is_active, methods: prevention_state.methods.clone(), start_time: prevention_state.start_time, duration_minutes: prevention_state.duration_minutes })
 }
 
 fn main() {
